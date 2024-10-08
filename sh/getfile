@@ -1,0 +1,10 @@
+#!/bin/bash
+[ $# -eq 0 ] && read -p "What is the 0x0.st assigned name: " file || file=$1
+curl "http://0x0.st/$file"
+
+# !/bin/bash
+# if [ $# -eq 0 ]; then
+	# echo "Add the 0x0.st linkname" 
+# else
+	# curl "http://0x0.st/$1"
+# fi

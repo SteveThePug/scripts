@@ -1,0 +1,11 @@
+#!/bin/bash
+[ $# -eq 0 ] && read -p "Provide a file to share: " file || file=$1
+curl -F "file=@$file" 0x0.st
+
+# if [ $# -eq 0 ]; then
+	# echo "Please provide a file to share"
+# else
+	# file=$1 
+	# curl -F "file=@$file" 0x0.st
+	# echo "Shared File!"
+# fi
