@@ -10,8 +10,14 @@ In the root `~/.tmux.conf` you need to add `source {repo_dir}/.tmux.conf`
 I prefer my capslock to be esc, so I have included that in the .bashrc file.
 These files will also add the repository to the path so that the bash scripts are accessible by the command line.
 Use either file respectively
-`source {repo_dir}/.bashrc`
-`source {repo_dir}/.zshrc`
+```
+source {repo_dir}/.bashrc
+export PATH="$HOME/scripts/sh:$PATH"
+```
+```
+source {repo_dir}/.zshrc`
+export PATH="$HOME/scripts/sh:$PATH"
+```
 
 # .vimrc
 This also needs similar treatment
