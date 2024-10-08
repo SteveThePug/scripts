@@ -1,10 +1,18 @@
 # scripts
 A collection of my Linux scripts and configs that I use across my machines.
 
+When refering to {repo_dir}, be sure to use absolute paths! I am using
+repo_dir = ~/scripts
+
 # .tmux.conf
 I use i3 window manager, and I appreciate its default keybindings and navigation.
-I also have made the direction navigation the same as VIM.
-In the root `~/.tmux.conf` you need to add `source {repo_dir}/.tmux.conf`
+They have been ported over to tmux, please read the file for information on the keys.
+The direction navigation is the same as vim.
+In the root `~/.tmux.conf`
+add 
+```
+source {repo_dir}/.tmux.conf
+```
 
 # .bashrc ^ .zshrc
 I prefer my capslock to be esc, so I have included that in the .bashrc file.
@@ -12,15 +20,18 @@ These files will also add the repository to the path so that the bash scripts ar
 Use either file respectively
 ```
 source {repo_dir}/.bashrc
-export PATH="$HOME/scripts/sh:$PATH"
+export PATH="{repo_dir}/sh:$PATH"
 ```
 ```
 source {repo_dir}/.zshrc`
-export PATH="$HOME/scripts/sh:$PATH"
+export PATH="{repo_dir}/sh:$PATH"
 ```
 
 # .vimrc
 This also needs similar treatment
+```
+source {repo_dir}/.vimrc
+```
 
 # getfile ^ sharefile
 These are short bash scripts that help upload files to `https://0x0.st`
