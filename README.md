@@ -7,8 +7,13 @@ A collection of Linux scripts and configs for use across multiple machines.
 When referring to `{repo_dir}`, use absolute paths (e.g., `~/scripts`).
 
 ### tmux Configuration
+This config uses tmux plugin manager to add session save / reloading with tmux-ressurect.
+Before using the config, please download the plugin manager with:
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
 
-Add to `~/.tmux.conf`:
+Then to use the config file, add to `~/.tmux.conf`:
 ```
 source {repo_dir}/tmux.conf
 ```
@@ -43,6 +48,8 @@ include {repo_dir}/i3config
 |------------|-------------|
 | <kbd>M-f</kbd> | Prefix key (similar to <kbd>$mod</kbd> in i3) |
 | <kbd>Prefix</kbd> + <kbd>Space</kbd> | Send prefix |
+| <kbd>Prefix</kbd> + <kbd>Ctrl</kbd> + <kbd>s</kbd> | Save session |
+| <kbd>Prefix</kbd> + <kbd>Ctrl</kbd> + <kbd>r</kbd> | Restore session |
 | <kbd>Prefix</kbd> + <kbd>?</kbd> | List keys |
 | <kbd>Prefix</kbd> + <kbd>[</kbd> | Enter copy mode |
 | <kbd>Prefix</kbd> + <kbd>]</kbd> | Paste buffer |
