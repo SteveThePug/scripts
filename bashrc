@@ -1,2 +1,2 @@
-setxkbmap -option caps:escape
+setxkbmap -option caps:swapescape
 alias vim=nvim

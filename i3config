@@ -1,6 +1,6 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-assign [title="Surfshark"] $ws8
+assign [class="surfshark"] $ws8
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
