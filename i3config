@@ -1,9 +1,12 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-assign [class="surfshark"] $ws8
+assign [class="Surfshark"] $ws8
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+
+exec --no-startup-id setxkbmap -option caps:swapescape
+exec --no-startup-id ./toggle-monitor-grayscale/toggle-monitor-grayscale.sh
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
