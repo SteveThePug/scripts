@@ -7,6 +7,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Use brightnessctl for audio
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
@@ -394,6 +398,7 @@ mode "$mode_gaps" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
 mode "$mode_gaps_inner" {
         bindsym plus  gaps inner current plus 5
         bindsym minus gaps inner current minus 5
@@ -406,6 +411,7 @@ mode "$mode_gaps_inner" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
 mode "$mode_gaps_outer" {
         bindsym plus  gaps outer current plus 5
         bindsym minus gaps outer current minus 5
