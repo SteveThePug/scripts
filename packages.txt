@@ -1,0 +1,3 @@
+# Here are a list of packages my i3 depends on
+brightnessctl
+pactl
