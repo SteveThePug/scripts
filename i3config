@@ -1,5 +1,7 @@
-# This is my personal bersonal i3 config file! - Adam French
-exec setxkbmap -option caps:swapescape
+# This is my personal personal i3 config file! - Adam French
+
+# Default Startup Applications
+exec --no-statup-id firefox
 
 # Use pactl for audio
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -148,10 +150,10 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-set $ws1 1:ʘ‿ʘ
+set $ws1 1:ツ
 set $ws2 2:ಠ‿ಠ
 set $ws3 3:◕‿◕
-set $ws4 4:ツ
+set $ws4 4:ʘ‿ʘ
 set $ws5 5:˘◡˘
 set $ws6 6:◠‿◠
 set $ws7 7:ᵔᴥᵔ
@@ -289,7 +291,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 30 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -342,16 +344,16 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #000000
-        statusline #F9CA00
-        separator  #FFFFFF
+        background #1A1B2F
+        statusline #C792EA
+        separator  #FF79C6
 
-#                      border  backgr. text
-        focused_workspace  #F9CA00 #000000 #FFFFFF
-        active_workspace   #006220 #010101 #F0F0F0
-        inactive_workspace #006220 #010101 #F0F0F0
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#                      border   backgr.   text
+        focused_workspace  #82AAFF #1A1B2F #FFFFFF
+        active_workspace   #C792EA #2A2B3D #FFFFFF
+        inactive_workspace #6272A4 #2A2B3D #FFFFFF
+        binding_mode       #FF79C6 #1A1B2F #FFFFFF
+        urgent_workspace   #FF5370 #2A2B3D #FFFFFF
     }
 }
 
@@ -359,22 +361,22 @@ bar {
 bindsym $mod+m bar mode toggle
 
 # Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #F0CA00 #000000 #FFFFFF #FFF00F
-  client.focused_inactive #006220 #101010 #F0F0F0 #FF00FF
-  client.unfocused        #006220 #102010 #F0F0F0 #FF00FF
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+# class                   border   backgr.   text      indic.    child_border
+  client.focused          #82AAFF #1A1B2F #FFFFFF #C792EA
+  client.focused_inactive #C792EA #2A2B3D #F0F0F0 #FF79C6
+  client.unfocused        #6272A4 #2A2B3D #F0F0F0 #C792EA
+  client.urgent           #FF5370 #2A2B3D #FFFFFF #FF79C6
+  client.placeholder      #1A1B2F #1A1B2F #FFFFFF #1A1B2F
 
-  client.background       #2B2C2B
+  client.background       #1A1B2F
 
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Set inner/outer gaps
-gaps inner -2
-gaps outer -2
+gaps inner 10
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>

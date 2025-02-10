@@ -6,6 +6,14 @@ A collection of Linux scripts and configs for use across multiple machines.
 
 When referring to `{repo_dir}`, use absolute paths (e.g., `~/scripts`).
 
+### alacritty configuration
+Add this to the `.config/alacritty/alacritty.toml`
+```
+import = [
+  "~/scripts/alacritty.toml"
+]
+```
+
 ### tmux Configuration
 This config uses tmux plugin manager to add session save / reloading with tmux-ressurect.
 Before using the config, please download the plugin manager with:
