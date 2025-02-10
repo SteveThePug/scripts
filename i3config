@@ -1,4 +1,5 @@
 # This is my personal bersonal i3 config file! - Adam French
+exec setxkbmap -option caps:swapescape
 
 # Use pactl for audio
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -188,6 +189,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8;
 
 # Open applications on specific workspaces
 assign [class="Surfshark"] $ws8
+assign [class="firefox"] $ws1
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
