@@ -1,7 +1,9 @@
 # This is my personal personal i3 config file! - Adam French
 
 # Default Startup Applications
-exec --no-statup-id firefox
+exec --no-statup-id alacritty
+exec xrandr --output eDP --primary
+exec xfce4-volumed-pulse
 
 # Use pactl for audio
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -334,8 +336,8 @@ bar {
 	status_command i3status
 	position bottom
 
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
+        tray_output primary
+
 #	tray_output eDP1
 
 	bindsym button4 nop

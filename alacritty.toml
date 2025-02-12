@@ -22,8 +22,8 @@
 
 opacity = 0.7
 
-decorations = "Full"
-decorations_theme_variant = "Light" # "Dark"
+# decorations = "Full"
+# decorations_theme_variant = "Light" # "Dark"
 
 [font]
 
