@@ -8,10 +8,11 @@ set $ws4 4:ʘ‿ʘ
 set $ws5 5:˘◡˘
 set $ws6 6:◠‿◠
 set $ws7 7:ᵔᴥᵔ
-set $ws8 8:^‿^
+set $ws8 8:æ
 
 # DEFAULT STARTUP --------------------------------------
 exec setxkbmap -option caps:swapescape
+exec --no-startup-id volctl
 exec --no-startup-id xfce4-volumed-pulse
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id manjaro-hello
@@ -19,7 +20,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id dunst
-exec --no-startup-id nitrogen ~/scripts/background.jpg
+# exec --no-startup-id nitrogen ~/scripts/background.jpg
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
@@ -280,7 +281,7 @@ mode "$mode_gaps_outer" {
 bindsym $mod+9 exec --no-startup-id blurlock
 # APPLICATION WORKSPACES ----------------------------------------------------
 assign [class="Surfshark"] $ws8
-assign [class="firefox"] $ws2
+assign [class="firefox"] $ws1
 assign [class="Pale moon"] $ws2
 assign [class="Pcmanfm"] $ws3
 assign [class="Skype"] $ws5
