@@ -70,7 +70,7 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_run -nb '#1A1B2F' -sf '#FF79C6' -sb '#1A1B2F' -nf '#c792EA'
+bindsym $mod+d exec --no-startup-id dmenu_recency -nb '#1A1B2F' -sf '#FF79C6' -sb '#1A1B2F' -nf '#c792EA'
 
 bindsym $mod+Ctrl+m exec pavucontrol
 
