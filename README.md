@@ -10,7 +10,7 @@ When referring to `{repo_dir}`, use absolute paths (e.g., `~/scripts`).
 Add this to the `.config/alacritty/alacritty.toml`
 ```
 import = [
-  "~/scripts/alacritty.toml"
+  "{repo_dir}/alacritty.toml"
 ]
 ```
 
