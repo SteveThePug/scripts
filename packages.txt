@@ -1,3 +1,75 @@
-# Here are a list of packages my i3 depends on
+# i3 DEPENDENCIES
 brightnessctl
 pactl
+i3exit
+i3blocks
+i3-wm
+i3status
+xautolock
+
+# APPEARANCE
+lxappearance
+dunst
+nitrogen
+
+# APPLICATIONS
+gimp
+bambustudio-bin
+surfshark-client
+waterfox-bin
+ytmdl
+steam
+mixxx
+icecast
+
+# IMG / VIDEO APPS
+audacity
+vlc
+vlc-plugins-all
+flameshot
+
+# PACKAGE MANAGERS
+snapd
+flatpak
+yay
+
+# TERMINALS
+alacritty
+kitty
+
+
+# AUDIO
+pavucontrol
+pipewire
+pipewire-alsa
+pipewire-audio
+pipewire-jack
+pipewire-pulse
+volctl
+moc-pulse
+
+# CODING
+rust
+nodejs
+npm
+yarn
+zed
+vim
+neovim
+
+# FILE 
+ranger
+thunar
+rar
+unrar
+zip
+unzip
+
+
+# WINDOWS COMPATIBILITY
+wine
+mono
+
+# LOCALNET
+avahi
+
