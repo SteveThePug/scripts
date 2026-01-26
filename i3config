@@ -11,20 +11,25 @@ set $ws7 7:ᵔᴥᵔ
 set $ws8 8:æ
 
 # DEFAULT STARTUP --------------------------------------
-exec setxkbmap -option caps:swapescape
+exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id volctl
+exec --no-startup-id fcitx5
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id dunst
+exec --no-startup-id xautolock -time 30 -locker blurlock
 # exec --no-startup-id nitrogen ~/scripts/background.jpg
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 30 -locker blurlock
+exec --no-startup-id waterfox
+exec --no-startup-id steam
+exec --no-startup-id surfshark
+
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -128,9 +133,9 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking;exec notify-send 'layout stacking'
+bindsym $mod+w layout tabbed; exec notify-send 'layout tabbed'
+bindsym $mod+e layout toggle split; exec notify-send 'layout split'
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -280,7 +285,6 @@ mode "$mode_gaps_outer" {
 bindsym $mod+9 exec --no-startup-id blurlock
 # APPLICATION WORKSPACES ----------------------------------------------------
 assign [class="Surfshark"] $ws8
-# assign [class="waterfox"] $ws1
 # assign [class="zed"] $ws1
 # assign [class="gimp"] $ws2
 # assign [class="Pale moon"] $ws2
@@ -288,6 +292,8 @@ assign [class="Surfshark"] $ws8
 # assign [class="Skype"] $ws5
 
 # APPLICATION WINDOW MODES --------------------------------------------------
+for_window [title="Picture-in-Picture"] floating disable border pixel 0
+
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -323,7 +329,7 @@ for_window [urgent=latest] focus
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-        status_command i3status
+        status_command i3blocks -c ~/scripts/i3blocks.conf
 	position bottom
 
         tray_output primary
