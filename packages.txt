@@ -1,4 +1,3 @@
-# i3 DEPENDENCIES
 brightnessctl
 pactl
 i3exit
@@ -7,38 +6,33 @@ i3-wm
 i3status
 xautolock
 
-# APPEARANCE
 lxappearance
 dunst
 nitrogen
 
-# APPLICATIONS
 gimp
 bambustudio-bin
-surfshark-client
+surfshark
+spotify
 waterfox-bin
 ytmdl
 steam
 mixxx
 icecast
 
-# IMG / VIDEO APPS
 audacity
 vlc
 vlc-plugins-all
 flameshot
 
-# PACKAGE MANAGERS
 snapd
 flatpak
 yay
 
-# TERMINALS
 alacritty
 kitty
 
 
-# AUDIO
 pavucontrol
 pipewire
 pipewire-alsa
@@ -48,7 +42,6 @@ pipewire-pulse
 volctl
 moc-pulse
 
-# CODING
 rust
 nodejs
 npm
@@ -57,7 +50,6 @@ zed
 vim
 neovim
 
-# FILE 
 ranger
 thunar
 rar
@@ -66,10 +58,8 @@ zip
 unzip
 
 
-# WINDOWS COMPATIBILITY
 wine
 mono
 
-# LOCALNET
 avahi
 
