@@ -1,0 +1,106 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 30,
+    "spacing": 0,
+
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-right": [
+        "custom/greetings",
+        "custom/history",
+        "custom/claudebar",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "disk",
+        "network",
+        "clock",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "ツ",
+            "2": "ಠ‿ಠ",
+            "3": "◕‿◕",
+            "4": "ʘ‿ʘ",
+            "5": "˘◡˘",
+            "6": "◠‿◠",
+            "7": "ᵔᴥᵔ",
+            "8": "æ"
+        }
+    },
+
+    "hyprland/submap": {
+        "format": " {} "
+    },
+
+    "custom/greetings": {
+        "exec": "echo $USER!",
+        "interval": "once",
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "custom/history": {
+        "exec": "~/scripts/sh/waybar-history",
+        "format": "$ {}",
+        "tooltip": false
+    },
+
+    "custom/claudebar": {
+        "exec": "claudebar",
+        "return-type": "json",
+        "interval": 60,
+        "signal": 13,
+        "tooltip": true,
+        "on-click": "xdg-open https://claude.ai/settings/usage"
+    },
+
+    "pulseaudio": {
+        "format": "VOL: {volume}%",
+        "format-muted": "VOL: mute",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "MEM: {used:0.1f}G/{total:0.1f}G",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "disk": {
+        "format": "DISK: {used}/{total}",
+        "interval": 30,
+        "path": "/",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "WIFI: {essid}",
+        "format-ethernet": "ETH: {ifname}",
+        "format-disconnected": "WIFI: --",
+        "interval": 10,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "tray": {
+        "spacing": 10
+    }
+}

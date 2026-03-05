@@ -1,0 +1,3 @@
+[submodule "hatsune-miku-windows-linux-cursors"]
+	path = hatsune-miku-windows-linux-cursors
+	url = https://github.com/supermariofps/hatsune-miku-windows-linux-cursors.git

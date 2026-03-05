@@ -1,14 +1,32 @@
+ly
+
+wayland
+xorg-xwayland
+wl-clipboard
+qt5-wayland
+qt6-wayland
+xdg-desktop-portal-hyprland
+
+sway
+swaybg
+swayidle
+swaylock
+
+hyprland
+hyprpaper
+hypridle
+hyprlock
+
+waybar
+wofi
+
+grim
+slurp
+
+mako
 brightnessctl
-pactl
-i3exit
-i3blocks
-i3-wm
-i3status
-xautolock
 
 lxappearance
-dunst
-nitrogen
 
 gimp
 bambustudio-bin
@@ -31,7 +49,6 @@ yay
 
 alacritty
 kitty
-
 
 pavucontrol
 pipewire
@@ -57,9 +74,7 @@ unrar
 zip
 unzip
 
-
 wine
 mono
 
 avahi
-

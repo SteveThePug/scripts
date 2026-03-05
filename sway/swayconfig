@@ -312,8 +312,7 @@ for_window [class="Xfburn"] floating enable
 for_window [urgent=latest] focus
 
 # AESTETICS ----------------------------------------------------------------
-
-exec_always waybar -c ~/scripts/waybar_config -s ~/scripts/waybar_style.css
+exec_always waybar -c ~/scripts/waybar/waybar_config -s ~/scripts/waybar/waybar_style.css
 
 # Theme colors
 # class                 border  backgr. text    indic.   child_border
