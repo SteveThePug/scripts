@@ -55,6 +55,7 @@ window#waybar {
 #memory,
 #disk,
 #network,
+#battery,
 #clock {
     padding: 0 10px;
     color: #C792EA;
@@ -68,8 +69,17 @@ window#waybar {
 #memory,
 #disk,
 #network,
+#battery,
 #clock {
     border-left: 1px solid #FF79C6;
+}
+
+#battery.warning {
+    color: #FFB86C;
+}
+
+#battery.critical {
+    color: #FF5370;
 }
 
 #custom-greetings {
