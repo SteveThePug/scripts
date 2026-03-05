@@ -4,6 +4,14 @@ A collection of Linux scripts and configs for use across multiple machines.
 
 ## Installation
 
+### Submodules
+
+After cloning, pull submodules with:
+
+```bash
+git submodule update --init --recursive
+```
+
 ### Packages
 
 Install all packages using `yay`:
