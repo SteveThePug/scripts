@@ -4,15 +4,13 @@ A collection of Linux scripts and configs for use across multiple machines.
 
 ## Installation
 
-When referring to `{repo_dir}`, use absolute paths (e.g., `~/scripts`).
-
 ### alacritty configuration
 
 Add this to the `.config/alacritty/alacritty.toml`
 
 ```
 import = [
-  "{repo_dir}/alacritty.toml"
+  "~/scripts/alacritty.toml"
 ]
 ```
 
@@ -28,7 +26,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 Then to use the config file, add to `~/.tmux.conf`:
 
 ```
-source {repo_dir}/tmux.conf
+source ~/scripts/tmux.conf
 ```
 
 ### Bash/Zsh Configuration
@@ -36,8 +34,8 @@ source {repo_dir}/tmux.conf
 Add to `~/.bashrc` or `~/.zshrc`:
 
 ```bash
-source {repo_dir}/bashrc  # or zshrc
-export PATH="{repo_dir}/sh:$PATH"
+source ~/scripts/bashrc  # or zshrc
+export PATH="~/scripts/sh:$PATH"
 ```
 
 ### Vim Configuration
@@ -45,35 +43,43 @@ export PATH="{repo_dir}/sh:$PATH"
 Add to `~/.vimrc`:
 
 ```
-source {repo_dir}/vimrc
+source ~/scripts/vimrc
 ```
 
 ### i3 Configuration
 
 ```bash
-ln -s {repo_dir}/i3/i3config ~/.config/i3/config
-ln -s {repo_dir}/i3/i3blocks.conf ~/.config/i3blocks/config
-ln -s {repo_dir}/i3/i3status.conf ~/.config/i3status/config
+ln -s ~/scripts/i3/i3config ~/.config/i3/config
+ln -s ~/scripts/i3/i3blocks.conf ~/.config/i3blocks/config
+ln -s ~/scripts/i3/i3status.conf ~/.config/i3status/config
 ```
 
 ### Hyprland Configuration
 
 ```bash
-ln -s {repo_dir}/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
-ln -s {repo_dir}/waybar/waybar_hyprland_config.json ~/.config/waybar/config
+ln -s ~/scripts/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
+ln -s ~/scripts/waybar/waybar_hyprland_config.json ~/.config/waybar/config
+ln -s ~/scripts/waybar/waybar_style.css ~/.config/waybar/style.css
 ```
 
 ### Sway Configuration
 
 ```bash
-ln -s {repo_dir}/sway/swayconfig ~/.config/sway/config
-ln -s {repo_dir}/waybar/waybar_sway_config.json ~/.config/waybar/config
+ln -s ~/scripts/sway/swayconfig ~/.config/sway/config
+ln -s ~/scripts/waybar/waybar_sway_config.json ~/.config/waybar/config
+ln -s ~/scripts/waybar/waybar_style.css ~/.config/waybar/style.css
 ```
 
 ### Wofi Configuration
 
 ```bash
-ln -s {repo_dir}/wofi/wofi_style.css ~/.config/wofi/style.css
+ln -s ~/scripts/wofi/wofi_style.css ~/.config/wofi/style.css
+```
+
+### Hatsune Miku Cursor
+
+```bash
+ln -s ~/scripts/hatsune-miku-windows-linux-cursors/miku-cursor-linux ~/.local/share/icons/"Miku Cursor"
 ```
 
 ## Keybindings
