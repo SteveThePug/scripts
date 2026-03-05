@@ -14,6 +14,7 @@
         "memory",
         "disk",
         "network",
+        "battery",
         "clock",
         "tray"
     ],
@@ -92,6 +93,14 @@
         "format-ethernet": "ETH: {ifname}",
         "format-disconnected": "WIFI: --",
         "interval": 10,
+        "tooltip": false
+    },
+
+    "battery": {
+        "format": "BAT: {capacity}%",
+        "format-charging": "BAT: {capacity}% CHR",
+        "format-plugged": "BAT: {capacity}% PLG",
+        "interval": 30,
         "tooltip": false
     },
 
