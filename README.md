@@ -4,6 +4,14 @@ A collection of Linux scripts and configs for use across multiple machines.
 
 ## Installation
 
+### Packages
+
+Install all packages using `yay`:
+
+```bash
+yay -S $(grep -v '^\s*$' ~/scripts/packages.txt | tr '\n' ' ')
+```
+
 ### alacritty configuration
 
 Add this to the `.config/alacritty/alacritty.toml`
