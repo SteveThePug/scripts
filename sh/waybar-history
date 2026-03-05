@@ -1,0 +1,14 @@
+#!/bin/bash
+# waybar-history: streams last zsh history command, updates on each new entry
+
+histfile="$HOME/.zsh_history"
+
+output() {
+    tail -1 "$histfile" | cut -d';' -f2-
+}
+
+output
+
+while inotifywait -qq -e close_write "$histfile" 2>/dev/null; do
+    output
+done
