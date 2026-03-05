@@ -49,37 +49,37 @@ source ~/scripts/vimrc
 ### i3 Configuration
 
 ```bash
-ln -s ~/scripts/i3/i3config ~/.config/i3/config
-ln -s ~/scripts/i3/i3blocks.conf ~/.config/i3blocks/config
-ln -s ~/scripts/i3/i3status.conf ~/.config/i3status/config
+ln -sf ~/scripts/i3/i3config ~/.config/i3/config
+ln -sf ~/scripts/i3/i3blocks.conf ~/.config/i3blocks/config
+ln -sf ~/scripts/i3/i3status.conf ~/.config/i3status/config
 ```
 
 ### Hyprland Configuration
 
 ```bash
-ln -s ~/scripts/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
-ln -s ~/scripts/waybar/waybar_hyprland_config.json ~/.config/waybar/config
-ln -s ~/scripts/waybar/waybar_style.css ~/.config/waybar/style.css
+ln -sf ~/scripts/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
+ln -sf ~/scripts/waybar/waybar_hyprland_config.json ~/.config/waybar/config
+ln -sf ~/scripts/waybar/waybar_style.css ~/.config/waybar/style.css
 ```
 
 ### Sway Configuration
 
 ```bash
-ln -s ~/scripts/sway/swayconfig ~/.config/sway/config
-ln -s ~/scripts/waybar/waybar_sway_config.json ~/.config/waybar/config
-ln -s ~/scripts/waybar/waybar_style.css ~/.config/waybar/style.css
+ln -sf ~/scripts/sway/swayconfig ~/.config/sway/config
+ln -sf ~/scripts/waybar/waybar_sway_config.json ~/.config/waybar/config
+ln -sf ~/scripts/waybar/waybar_style.css ~/.config/waybar/style.css
 ```
 
 ### Wofi Configuration
 
 ```bash
-ln -s ~/scripts/wofi/wofi_style.css ~/.config/wofi/style.css
+ln -sf ~/scripts/wofi/wofi_style.css ~/.config/wofi/style.css
 ```
 
 ### Hatsune Miku Cursor
 
 ```bash
-ln -s ~/scripts/hatsune-miku-windows-linux-cursors/miku-cursor-linux ~/.local/share/icons/"Miku Cursor"
+ln -sf ~/scripts/hatsune-miku-windows-linux-cursors/miku-cursor-linux ~/.local/share/icons/"Miku Cursor"
 ```
 
 ## Keybindings
