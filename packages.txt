@@ -59,7 +59,6 @@ pipewire-pulse
 volctl
 moc-pulse
 
-rust
 nodejs
 npm
 yarn
