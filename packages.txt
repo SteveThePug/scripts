@@ -49,6 +49,12 @@ yay
 
 alacritty
 kitty
+tmux
+ranger
+mocp
+dunst
+cliphist
+inotify-tools
 
 pavucontrol
 pipewire
