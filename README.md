@@ -27,25 +27,30 @@ Pick a window manager section below, then add the shared configs.
 ### Hyprland
 
 ```bash
-ln -sf ~/scripts/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
-ln -sf ~/scripts/waybar/waybar_hyprland_config.json ~/.config/waybar/config
-ln -sf ~/scripts/waybar/waybar_style.css ~/.config/waybar/style.css
-ln -sf ~/scripts/wofi/wofi_style.css ~/.config/wofi/style.css
+ln -sf ~/scripts/hypr ~/.config/hypr
+ln -sf ~/scripts/waybar ~/.config/waybar
+ln -sf ~/scripts/wofi ~/.config/wofi
 ```
 
 ### Sway
 
 ```bash
-ln -sf ~/scripts/sway/swayconfig ~/.config/sway/config
-ln -sf ~/scripts/waybar/waybar_sway_config.json ~/.config/waybar/config
-ln -sf ~/scripts/waybar/waybar_style.css ~/.config/waybar/style.css
-ln -sf ~/scripts/wofi/wofi_style.css ~/.config/wofi/style.css
+ln -sf ~/scripts/sway ~/.config/sway
+ln -sf ~/scripts/waybar ~/.config/waybar
+ln -sf ~/scripts/wofi ~/.config/wofi
+```
+
+The default waybar config (`waybar/config`) is set up for Hyprland. For Sway, rename the sway config as the active one:
+
+```bash
+mv ~/scripts/waybar/config ~/scripts/waybar/config.hypr.json
+mv ~/scripts/waybar/waybar_sway_config.json ~/scripts/waybar/config
 ```
 
 ### i3
 
 ```bash
-ln -sf ~/scripts/i3/i3config ~/.config/i3/config
+ln -sf ~/scripts/i3 ~/.config/i3
 ln -sf ~/scripts/i3/i3blocks.conf ~/.config/i3blocks/config
 ln -sf ~/scripts/i3/i3status.conf ~/.config/i3status/config
 ```
@@ -163,6 +168,35 @@ Prefix is <kbd>Ctrl</kbd> + <kbd>f</kbd>.
 | `Prefix + Ctrl + s` | Save session (resurrect) |
 | `Prefix + Ctrl + r` | Restore session (resurrect) |
 
+## Colorscheme
+
+All colors are defined in a single file: `colors.conf`. A generator script produces format-specific fragments that each config sources or imports.
+
+To change the theme:
+
+```bash
+# 1. Edit the palette
+vim ~/scripts/colors.conf
+
+# 2. Regenerate fragments
+~/scripts/sh/gen-colors
+
+# 3. Reload your WM / bar
+hyprctl reload          # Hyprland
+swaymsg reload          # Sway
+killall waybar && waybar &  # Waybar
+```
+
+Generated files (committed so configs work after a fresh clone):
+
+| File | Format | Used by |
+| --- | --- | --- |
+| `hypr/colors.conf` | `$color_name = rgb(HEXVAL)` | `hyprland.conf` (source) |
+| `sway/colors.conf` | `set $color_name #HEXVAL` | `swayconfig` (include) |
+| `i3/colors.conf` | `set $color_name #HEXVAL` | `i3config` (include) |
+| `waybar/colors.css` | CSS custom properties | `waybar/style.css` (@import) |
+| `wofi/colors.css` | CSS custom properties | `wofi/style.css` (@import) |
+
 ## Scripts
 
 All in `sh/`, added to `$PATH` via the shell config above.
@@ -172,3 +206,4 @@ All in `sh/`, added to `$PATH` via the shell config above.
 | `sharefile <file>` | Upload a file to 0x0.st |
 | `getfile <id>` | Download a file from 0x0.st |
 | `waybar-history` | Stream the last zsh history entry to waybar |
+| `gen-colors` | Regenerate color fragments from `colors.conf` |

@@ -1,3 +1,5 @@
+include ~/scripts/sway/colors.conf
+
 output * scale 1.2
 
 
@@ -313,14 +315,14 @@ for_window [urgent=latest] focus
 exec_always waybar -c ~/scripts/waybar/waybar_sway_config.json -s ~/scripts/waybar/waybar_style.css
 
 # Theme colors
-# class                 border  backgr. text    indic.   child_border
-client.focused          #82AAFF #C792EA #FFFFFF #C792EA
-client.focused_inactive #C792EA #2A2B3D #F0F0F0 #FF79C6
-client.unfocused        #6272A4 #2A2B3D #F0F0F0 #C792EA
-client.urgent           #FF5370 #2A2B3D #FFFFFF #FF79C6
-client.placeholder      #1A1B2F #1A1B2F #FFFFFF #1A1B2F
+# class                 border            backgr.          text              indic.
+client.focused          $color_secondary  $color_primary   $color_text_dark  $color_primary
+client.focused_inactive $color_primary    $color_alt_bg    $color_text_light $color_tertiary
+client.unfocused        $color_gray       $color_alt_bg    $color_text_light $color_primary
+client.urgent           $color_tertiary   $color_alt_bg    $color_white      $color_tertiary
+client.placeholder      $color_bg         $color_bg        $color_white      $color_bg
 
-client.background       #1A1B2F
+client.background       $color_bg
 
 # Set inner/outer gaps
 gaps inner 10

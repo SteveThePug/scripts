@@ -1,3 +1,5 @@
+@import "colors.css";
+
 * {
     font-family: "URWGothic-Book", monospace;
     font-size: 16px;
@@ -9,39 +11,39 @@
 }
 
 window#waybar {
-    background-color: #1A1B2F;
-    color: #C792EA;
+    background-color: var(--color-bg);
+    color: var(--color-primary);
 }
 
 /* Workspaces */
 #workspaces button {
     padding: 0 8px;
-    background-color: #2A2B3D;
-    color: #FFFFFF;
+    background-color: var(--color-alt_bg);
+    color: var(--color-white);
     border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    background-color: #2A2B3D;
-    border-bottom: 2px solid #C792EA;
+    background-color: var(--color-alt_bg);
+    border-bottom: 2px solid var(--color-primary);
     box-shadow: none;
 }
 
 #workspaces button.focused,
 #workspaces button.active {
-    background-color: #1A1B2F;
-    color: #FFFFFF;
-    border-bottom: 2px solid #C792EA;
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    border-bottom: 2px solid var(--color-primary);
 }
 
 #workspaces button.urgent {
-    background-color: #FF5370;
-    color: #FFFFFF;
+    background-color: var(--color-tertiary);
+    color: var(--color-white);
 }
 
 #mode {
-    background-color: #FF79C6;
-    color: #1A1B2F;
+    background-color: var(--color-tertiary);
+    color: var(--color-text_dark);
     padding: 0 8px;
     font-style: italic;
 }
@@ -58,7 +60,7 @@ window#waybar {
 #battery,
 #clock {
     padding: 0 10px;
-    color: #C792EA;
+    color: var(--color-primary);
 }
 
 /* Pink separators between modules (matching i3bar separator color) */
@@ -71,52 +73,52 @@ window#waybar {
 #network,
 #battery,
 #clock {
-    border-left: 1px solid #FF79C6;
+    border-left: 1px solid var(--color-tertiary);
 }
 
 #battery.warning {
-    color: #FFB86C;
+    color: var(--color-secondary);
 }
 
 #battery.critical {
-    color: #FF5370;
+    color: var(--color-tertiary);
 }
 
 #custom-greetings {
-    color: #f5af19;
+    color: var(--color-secondary);
 }
 
 #clock {
-    color: #FF79C6;
+    color: var(--color-tertiary);
 }
 
 /* claudebar severity classes */
 #custom-claudebar.low {
-    color: #50FA7B;
+    color: var(--color-primary);
 }
 
 #custom-claudebar.mid {
-    color: #F1FA8C;
+    color: var(--color-secondary);
 }
 
 #custom-claudebar.high {
-    color: #FFB86C;
+    color: var(--color-tertiary);
 }
 
 #custom-claudebar.critical {
-    color: #FF5370;
+    color: var(--color-tertiary);
 }
 
 #tray {
     padding: 0 8px;
-    border-left: 1px solid #FF79C6;
+    border-left: 1px solid var(--color-tertiary);
 }
 
-#tray>.passive {
+#tray > .passive {
     -gtk-icon-effect: dim;
 }
 
-#tray>.needs-attention {
+#tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #FF5370;
+    background-color: var(--color-tertiary);
 }
