@@ -2,6 +2,12 @@
 
 Dotfiles and scripts for Arch Linux (Manjaro), targeting Wayland (Hyprland / Sway) with an i3 fallback.
 
+## IMPORTANT TODO
+
+Inside `scripts/wofi/styles.css`, I have the colour css set to `/home/adamf/scripts/wofi/colors.css`, which is clearly ugly and not nice but it was quick to do.
+
+Wofi is called in hypr/hyprland.conf and sway/swayconfig with the command `wofi --style /home/adamf/scripts/wofi/styles.css`. This is also not ideal but I couldn't find a way to get it to work with a relative path. I'm unsure when hyprland working directory is.
+
 ## Setup
 
 ```bash
@@ -108,65 +114,65 @@ All window managers and tmux use vim-style <kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><
 
 ### Shared across WMs
 
-| Key | Action |
-| --- | --- |
-| `$mod + Return` | Terminal (kitty) |
-| `$mod + Shift + q` | Kill window |
-| `$mod + d` | Launcher (wofi / dmenu) |
-| `$mod + h/j/k/l` | Focus left/down/up/right |
-| `$mod + Shift + h/j/k/l` | Move window left/down/up/right |
-| `$mod + g` / `$mod + v` | Split horizontal / vertical |
-| `$mod + f` | Fullscreen |
-| `$mod + Shift + Space` | Toggle floating |
-| `$mod + 1-8` | Switch workspace |
-| `$mod + Shift + 1-8` | Move window to workspace |
-| `$mod + Ctrl + 1-8` | Move window silently |
-| `$mod + -` | Scratchpad show |
-| `$mod + Shift + -` | Move to scratchpad |
-| `$mod + b` | Previous workspace |
-| `$mod + 9` | Lock screen |
-| `$mod + 0` | System menu (lock/suspend/reboot/shutdown) |
-| `$mod + r` | Resize mode (hjkl) |
-| `$mod + m` | Toggle bar |
-| `$mod + Shift + c` | Reload config |
-| `$mod + Ctrl + m` | PulseAudio control |
-| `$mod + F2` | Browser (Waterfox) |
-| `$mod + F3` | File manager (ranger) |
-| `$mod + F5` | Music (mocp) |
-| `Print` | Screenshot |
+| Key                      | Action                                     |
+| ------------------------ | ------------------------------------------ |
+| `$mod + Return`          | Terminal (kitty)                           |
+| `$mod + Shift + q`       | Kill window                                |
+| `$mod + d`               | Launcher (wofi / dmenu)                    |
+| `$mod + h/j/k/l`         | Focus left/down/up/right                   |
+| `$mod + Shift + h/j/k/l` | Move window left/down/up/right             |
+| `$mod + g` / `$mod + v`  | Split horizontal / vertical                |
+| `$mod + f`               | Fullscreen                                 |
+| `$mod + Shift + Space`   | Toggle floating                            |
+| `$mod + 1-8`             | Switch workspace                           |
+| `$mod + Shift + 1-8`     | Move window to workspace                   |
+| `$mod + Ctrl + 1-8`      | Move window silently                       |
+| `$mod + -`               | Scratchpad show                            |
+| `$mod + Shift + -`       | Move to scratchpad                         |
+| `$mod + b`               | Previous workspace                         |
+| `$mod + 9`               | Lock screen                                |
+| `$mod + 0`               | System menu (lock/suspend/reboot/shutdown) |
+| `$mod + r`               | Resize mode (hjkl)                         |
+| `$mod + m`               | Toggle bar                                 |
+| `$mod + Shift + c`       | Reload config                              |
+| `$mod + Ctrl + m`        | PulseAudio control                         |
+| `$mod + F2`              | Browser (Waterfox)                         |
+| `$mod + F3`              | File manager (ranger)                      |
+| `$mod + F5`              | Music (mocp)                               |
+| `Print`                  | Screenshot                                 |
 
 ### System menu (`$mod + 0`)
 
-| Key | Action |
-| --- | --- |
-| `l` | Lock |
-| `s` | Suspend |
-| `h` | Hibernate |
-| `r` | Reboot |
-| `Shift + s` | Power off |
-| `e` | Exit session |
-| `Return` / `Esc` | Cancel |
+| Key              | Action       |
+| ---------------- | ------------ |
+| `l`              | Lock         |
+| `s`              | Suspend      |
+| `h`              | Hibernate    |
+| `r`              | Reboot       |
+| `Shift + s`      | Power off    |
+| `e`              | Exit session |
+| `Return` / `Esc` | Cancel       |
 
 ### tmux
 
 Prefix is <kbd>Ctrl</kbd> + <kbd>f</kbd>.
 
-| Key | Action |
-| --- | --- |
-| `Prefix + g` | Split horizontal |
-| `Prefix + v` | Split vertical |
-| `Prefix + h/j/k/l` | Select pane |
-| `Prefix + Ctrl + H/J/K/L` | Resize pane |
-| `Prefix + 1-0` | Select window 1-10 |
-| `Alt + 1-0` | Create window 1-10 |
-| `Prefix + !/@ etc.` | Move pane to window 1-10 |
-| `Prefix + w` | Choose window |
-| `Prefix + q` | Kill pane |
-| `Prefix + [` / `]` | Copy mode / Paste |
-| `Prefix + r` | Refresh |
-| `Prefix + R` | Reload config |
-| `Prefix + Ctrl + s` | Save session (resurrect) |
-| `Prefix + Ctrl + r` | Restore session (resurrect) |
+| Key                       | Action                      |
+| ------------------------- | --------------------------- |
+| `Prefix + g`              | Split horizontal            |
+| `Prefix + v`              | Split vertical              |
+| `Prefix + h/j/k/l`        | Select pane                 |
+| `Prefix + Ctrl + H/J/K/L` | Resize pane                 |
+| `Prefix + 1-0`            | Select window 1-10          |
+| `Alt + 1-0`               | Create window 1-10          |
+| `Prefix + !/@ etc.`       | Move pane to window 1-10    |
+| `Prefix + w`              | Choose window               |
+| `Prefix + q`              | Kill pane                   |
+| `Prefix + [` / `]`        | Copy mode / Paste           |
+| `Prefix + r`              | Refresh                     |
+| `Prefix + R`              | Reload config               |
+| `Prefix + Ctrl + s`       | Save session (resurrect)    |
+| `Prefix + Ctrl + r`       | Restore session (resurrect) |
 
 ## Colorscheme
 
@@ -189,21 +195,21 @@ killall waybar && waybar &  # Waybar
 
 Generated files (committed so configs work after a fresh clone):
 
-| File | Format | Used by |
-| --- | --- | --- |
-| `hypr/colors.conf` | `$color_name = rgb(HEXVAL)` | `hyprland.conf` (source) |
-| `sway/colors.conf` | `set $color_name #HEXVAL` | `swayconfig` (include) |
-| `i3/colors.conf` | `set $color_name #HEXVAL` | `i3config` (include) |
-| `waybar/colors.css` | CSS custom properties | `waybar/style.css` (@import) |
-| `wofi/colors.css` | CSS custom properties | `wofi/style.css` (@import) |
+| File                | Format                      | Used by                      |
+| ------------------- | --------------------------- | ---------------------------- |
+| `hypr/colors.conf`  | `$color_name = rgb(HEXVAL)` | `hyprland.conf` (source)     |
+| `sway/colors.conf`  | `set $color_name #HEXVAL`   | `swayconfig` (include)       |
+| `i3/colors.conf`    | `set $color_name #HEXVAL`   | `i3config` (include)         |
+| `waybar/colors.css` | CSS custom properties       | `waybar/style.css` (@import) |
+| `wofi/colors.css`   | CSS custom properties       | `wofi/style.css` (@import)   |
 
 ## Scripts
 
 All in `sh/`, added to `$PATH` via the shell config above.
 
-| Script | Description |
-| --- | --- |
-| `sharefile <file>` | Upload a file to 0x0.st |
-| `getfile <id>` | Download a file from 0x0.st |
-| `waybar-history` | Stream the last zsh history entry to waybar |
-| `gen-colors` | Regenerate color fragments from `colors.conf` |
+| Script             | Description                                   |
+| ------------------ | --------------------------------------------- |
+| `sharefile <file>` | Upload a file to 0x0.st                       |
+| `getfile <id>`     | Download a file from 0x0.st                   |
+| `waybar-history`   | Stream the last zsh history entry to waybar   |
+| `gen-colors`       | Regenerate color fragments from `colors.conf` |
