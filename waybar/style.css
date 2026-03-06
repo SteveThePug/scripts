@@ -11,39 +11,39 @@
 }
 
 window#waybar {
-    background-color: var(--color-bg);
-    color: var(--color-primary);
+    background-color: @color_bg;
+    color: @color_primary;
 }
 
 /* Workspaces */
 #workspaces button {
     padding: 0 8px;
-    background-color: var(--color-alt_bg);
-    color: var(--color-white);
+    background-color: @color_alt_bg;
+    color: @color_white;
     border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    background-color: var(--color-alt_bg);
-    border-bottom: 2px solid var(--color-primary);
+    background-color: @color_alt_bg;
+    border-bottom: 2px solid @color_primary;
     box-shadow: none;
 }
 
 #workspaces button.focused,
 #workspaces button.active {
-    background-color: var(--color-bg);
-    color: var(--color-white);
-    border-bottom: 2px solid var(--color-primary);
+    background-color: @color_bg;
+    color: @color_white;
+    border-bottom: 2px solid @color_primary;
 }
 
 #workspaces button.urgent {
-    background-color: var(--color-tertiary);
-    color: var(--color-white);
+    background-color: @color_tertiary;
+    color: @color_white;
 }
 
 #mode {
-    background-color: var(--color-tertiary);
-    color: var(--color-text_dark);
+    background-color: @color_tertiary;
+    color: @color_text_dark;
     padding: 0 8px;
     font-style: italic;
 }
@@ -60,7 +60,7 @@ window#waybar {
 #battery,
 #clock {
     padding: 0 10px;
-    color: var(--color-primary);
+    color: @color_primary;
 }
 
 /* Pink separators between modules (matching i3bar separator color) */
@@ -73,45 +73,45 @@ window#waybar {
 #network,
 #battery,
 #clock {
-    border-left: 1px solid var(--color-tertiary);
+    border-left: 1px solid @color_tertiary;
 }
 
 #battery.warning {
-    color: var(--color-secondary);
+    color: @color_secondary;
 }
 
 #battery.critical {
-    color: var(--color-tertiary);
+    color: @color_tertiary;
 }
 
 #custom-greetings {
-    color: var(--color-secondary);
+    color: @color_secondary;
 }
 
 #clock {
-    color: var(--color-tertiary);
+    color: @color_tertiary;
 }
 
 /* claudebar severity classes */
 #custom-claudebar.low {
-    color: var(--color-primary);
+    color: @color_primary;
 }
 
 #custom-claudebar.mid {
-    color: var(--color-secondary);
+    color: @color_secondary;
 }
 
 #custom-claudebar.high {
-    color: var(--color-tertiary);
+    color: @color_tertiary;
 }
 
 #custom-claudebar.critical {
-    color: var(--color-tertiary);
+    color: @color_tertiary;
 }
 
 #tray {
     padding: 0 8px;
-    border-left: 1px solid var(--color-tertiary);
+    border-left: 1px solid @color_tertiary;
 }
 
 #tray > .passive {
@@ -120,5 +120,5 @@ window#waybar {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: var(--color-tertiary);
+    background-color: @color_tertiary;
 }

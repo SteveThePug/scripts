@@ -1,29 +1,29 @@
-@import url("colors.css");
+@import "/home/adamf/scripts/wofi/colors.css";
 
 window {
     margin: 0px;
-    border: 1px solid var(--color-primary);
-    background-color: var(--color-bg);
+    border: 1px solid @color_primary;
+    background-color: @color_bg;
     border-radius: 8px;
 }
 
 #input {
     padding: 4px 8px;
     margin: 6px;
-    color: var(--color-text_light);
-    background-color: var(--color-alt_bg);
-    border: 1px solid var(--color-primary);
+    color: @color_text_light;
+    background-color: @color_alt_bg;
+    border: 1px solid @color_primary;
     border-radius: 4px;
 }
 
 #inner-box {
-    background-color: var(--color-bg);
+    background-color: @color_bg;
 }
 
 #outer-box {
     margin: 4px;
     padding: 4px;
-    background-color: var(--color-bg);
+    background-color: @color_bg;
 }
 
 #scroll {
@@ -33,7 +33,7 @@ window {
 
 #text {
     margin: 2px 8px;
-    color: var(--color-primary);
+    color: @color_primary;
 }
 
 #entry {
@@ -41,10 +41,10 @@ window {
 }
 
 #entry:selected {
-    background-color: var(--color-alt_bg);
-    border: 1px solid var(--color-primary);
+    background-color: @color_alt_bg;
+    border: 1px solid @color_primary;
 }
 
 #text:selected {
-    color: var(--color-tertiary);
+    color: @color_tertiary;
 }
