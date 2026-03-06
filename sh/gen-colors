@@ -1,0 +1,55 @@
+#!/bin/sh
+# Generate color fragment files for all configs from colors.conf
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+SRC="$SCRIPT_DIR/colors.conf"
+
+if [ ! -f "$SRC" ]; then
+  echo "Error: $SRC not found" >&2
+  exit 1
+fi
+
+# Read colors into variables
+while IFS='=' read -r key value; do
+  case "$key" in \#* | "") continue ;; esac
+  eval "color_$key=$value"
+done <"$SRC"
+
+# Hyprland: $color_name = rgb(HEXVAL) format (no #)
+{
+  while IFS='=' read -r key value; do
+    case "$key" in \#* | "") continue ;; esac
+    hex="${value#\#}"
+    echo "\$color_$key = rgb($hex)"
+  done <"$SRC"
+} >"$SCRIPT_DIR/hypr/colors.conf"
+echo "Wrote hypr/colors.conf"
+
+# Sway: set $color_name #HEXVAL
+{
+  while IFS='=' read -r key value; do
+    case "$key" in \#* | "") continue ;; esac
+    echo "set \$color_$key $value"
+  done <"$SRC"
+} >"$SCRIPT_DIR/sway/colors.conf"
+echo "Wrote sway/colors.conf"
+
+# i3: same format as sway
+cp "$SCRIPT_DIR/sway/colors.conf" "$SCRIPT_DIR/i3/colors.conf"
+echo "Wrote i3/colors.conf"
+
+# Waybar CSS: @define-color color_name #HEXVAL;
+{
+  while IFS='=' read -r key value; do
+    case "$key" in \#* | "") continue ;; esac
+    echo "@define-color color_$key $value;"
+  done <"$SRC"
+} >"$SCRIPT_DIR/waybar/colors.css"
+echo "Wrote waybar/colors.css"
+
+# Wofi CSS: same as waybar
+cp "$SCRIPT_DIR/waybar/colors.css" "$SCRIPT_DIR/wofi/colors.css"
+echo "Wrote wofi/colors.css"
+
+echo "Done. All color fragments generated."
