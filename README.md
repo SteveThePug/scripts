@@ -57,8 +57,8 @@ mv ~/scripts/waybar/waybar_sway_config.json ~/scripts/waybar/config
 
 ```bash
 ln -sf ~/scripts/i3 ~/.config/i3
-ln -sf ~/scripts/i3/i3blocks.conf ~/.config/i3blocks/config
-ln -sf ~/scripts/i3/i3status.conf ~/.config/i3status/config
+ln -sf ~/scripts/i3blocks ~/.config/i3blocks
+ln -sf ~/scripts/i3status ~/.config/i3status
 ```
 
 ### Cursor
@@ -162,6 +162,7 @@ Prefix is <kbd>Ctrl</kbd> + <kbd>f</kbd>.
 | `Prefix + g`              | Split horizontal            |
 | `Prefix + v`              | Split vertical              |
 | `Prefix + h/j/k/l`        | Select pane                 |
+| `Prefix + J/K`            | Swap pane down/up           |
 | `Prefix + Ctrl + H/J/K/L` | Resize pane                 |
 | `Prefix + 1-0`            | Select window 1-10          |
 | `Alt + 1-0`               | Create window 1-10          |
@@ -171,6 +172,8 @@ Prefix is <kbd>Ctrl</kbd> + <kbd>f</kbd>.
 | `Prefix + [` / `]`        | Copy mode / Paste           |
 | `Prefix + r`              | Refresh                     |
 | `Prefix + R`              | Reload config               |
+| `Prefix + Space`          | Send prefix (nested tmux)   |
+| `Prefix + ?`              | List keys                   |
 | `Prefix + Ctrl + s`       | Save session (resurrect)    |
 | `Prefix + Ctrl + r`       | Restore session (resurrect) |
 

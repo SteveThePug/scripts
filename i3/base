@@ -1,15 +1,4 @@
-set $color_primary #55ffbb
-set $color_secondary #62ff57
-set $color_tertiary #ff579a
-set $color_bg #1b110e
-set $color_bg_secondary #000000
-set $color_alt_bg #024942
-set $color_gray #222222
-set $color_text_light #F0F0F0
-set $color_text_dark #1b110e
-set $color_white #FFFFFF
-
-output * scale 1.2
+# This is my personal personal i3 config file! - Adam French
 
 
 # WORKSPACE NAMES -----------------------------------
@@ -23,30 +12,29 @@ set $ws7 7:ᵔᴥᵔ
 set $ws8 8:æ
 
 # DEFAULT STARTUP --------------------------------------
-# Keyboard: caps:swapescape via sway input (replaces setxkbmap)
-input * {
-    xkb_options caps:swapescape
-    xkb_layout gb
-}
-
+exec --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id volctl
 exec --no-startup-id fcitx5
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nm-applet --indicator
+# exec --no-startup-id manjaro-hello
+exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
-# clipit is X11-only; use cliphist + wl-paste instead:
-exec wl-paste --watch cliphist store
+exec --no-startup-id clipit
 exec --no-startup-id dunst
-# swayidle replaces xautolock
-exec swayidle -w timeout 1800 'swaylock -f' before-sleep 'swaylock -f'
+exec --no-startup-id xautolock -time 30 -locker blurlock
+# exec --no-startup-id nitrogen ~/scripts/background.jpg
+# exec --no-startup-id blueman-applet
+# exec_always --no-startup-id sbxkb
+# exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_green
 exec --no-startup-id waterfox
 exec --no-startup-id steam
 exec --no-startup-id surfshark
 
-# picom is X11-only; sway has a built-in compositor — no exec needed
 
 # PACTL BINDINGS ---------------------------------------
 
+set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -59,13 +47,17 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # DEFAULT WINDOW LAYOUT -------------------------------------
 
+# set default desktop layout (default is tiling)
 workspace_layout stacking
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
 default_floating_border normal
+# Hide borders
 hide_edge_borders none
 
 # KEYBINDS --------------------------------------------------
 
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
 # change borders
@@ -74,30 +66,31 @@ bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
 # Use Mouse+$mod to drag floating windows
-floating_modifier $mod normal
+floating_modifier $mod 
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec kitty 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+q kill 
 # start program launcher
-bindsym $mod+d exec --no-startup-id wofi --show drun --style ~/scripts/wofi/wofi_style.css
+bindsym $mod+d exec --no-startup-id dmenu_run -nb '$color_bg' -sf '$color_tertiary' -sb '$color_bg' -nf '$color_primary'
 
 bindsym $mod+Ctrl+m exec pavucontrol
 
 # Start Applications
 bindsym $mod+F2 exec waterfox
+# bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F3 exec kitty -e ranger
-bindsym $mod+Shift+F3 exec pcmanfm
+bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec kitty -e 'mocp'
-# picom keybinds removed (not applicable on Wayland)
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-# Screenshots: grim + slurp replace i3-scrot / flameshot
-bindsym Print exec grim -g "$(slurp)"
-bindsym $mod+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')"
-bindsym $mod+Shift+Print exec grim -g "$(slurp)"
-# xkill not available on Wayland; swaymsg kill is the closest equivalent
-bindsym $mod+Ctrl+x exec swaymsg kill
+bindsym Print exec flameshot gui
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 focus_follows_mouse yes
 
@@ -159,6 +152,7 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
@@ -187,35 +181,35 @@ bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 
 # Move to workspace with focused container
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+1 move container to workspace $ws1;
+bindsym $mod+Shift+2 move container to workspace $ws2;
+bindsym $mod+Shift+3 move container to workspace $ws3;
+bindsym $mod+Shift+4 move container to workspace $ws4;
+bindsym $mod+Shift+5 move container to workspace $ws5;
+bindsym $mod+Shift+6 move container to workspace $ws6;
+bindsym $mod+Shift+7 move container to workspace $ws7;
+bindsym $mod+Shift+8 move container to workspace $ws8;
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart sway inplace
-bindsym $mod+Shift+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
 
-# exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec swaylock -f, mode "default"
-    bindsym s exec systemctl suspend, mode "default"
-    bindsym u exec swaymsg exit, mode "default"
-    bindsym e exit
-    bindsym h exec systemctl hibernate, mode "default"
-    bindsym r exec systemctl reboot
-    bindsym Shift+s exec systemctl poweroff
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -225,21 +219,28 @@ mode "$mode_system" {
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 5 px or 5 ppt
         bindsym j resize grow height 5 px or 5 ppt
         bindsym k resize shrink height 5 px or 5 ppt
         bindsym l resize grow width 5 px or 5 ppt
 
+        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
+        # exit resize mode: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-# Gaps mode
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -280,13 +281,16 @@ mode "$mode_gaps_outer" {
 
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id swaylock -f
-
+bindsym $mod+9 exec --no-startup-id blurlock
 # APPLICATION WORKSPACES ----------------------------------------------------
-assign [app_id="Surfshark"] $ws8
+assign [class="Surfshark"] $ws8
+# assign [class="zed"] $ws1
+# assign [class="gimp"] $ws2
+# assign [class="Pale moon"] $ws2
+# assign [class="Pcmanfm"] $ws3
+# assign [class="Skype"] $ws5
 
 # APPLICATION WINDOW MODES --------------------------------------------------
-# Note: use app_id for native Wayland apps, class for XWayland apps
 for_window [title="Picture-in-Picture"] floating disable border pixel 0
 
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -307,7 +311,7 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
-for_window [app_id="pavucontrol"] floating enable
+for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
@@ -321,7 +325,34 @@ for_window [class="Xfburn"] floating enable
 for_window [urgent=latest] focus
 
 # AESTETICS ----------------------------------------------------------------
-exec_always waybar -c ~/scripts/waybar/waybar_sway_config.json -s ~/scripts/waybar/waybar_style.css
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+bar {
+        #status_command i3blocks -c ~/scripts/i3blocks.conf
+        status_command i3status
+	position bottom
+
+        tray_output primary
+
+	bindsym button4 nop
+	bindsym button5 nop
+        font xft:URWGothic-Book 11
+	strip_workspace_numbers yes
+
+        colors {
+                background $color_bg
+                statusline $color_primary
+                separator  $color_tertiary
+                focused_workspace  $color_primary  $color_bg     $color_white
+                active_workspace   $color_primary  $color_alt_bg $color_white
+                inactive_workspace $color_gray     $color_alt_bg $color_white
+                binding_mode       $color_tertiary $color_bg     $color_white
+                urgent_workspace   $color_tertiary $color_alt_bg $color_white
+        }
+}
+
+# hide/unhide i3status bar
+bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                 border            backgr.          text              indic.
@@ -338,4 +369,6 @@ gaps inner 10
 gaps outer 0
 smart_gaps on
 
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on

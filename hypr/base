@@ -1,13 +1,3 @@
-$color_primary = rgb(55ffbb)
-$color_secondary = rgb(62ff57)
-$color_tertiary = rgb(ff579a)
-$color_bg = rgb(1b110e)
-$color_bg_secondary = rgb(000000)
-$color_alt_bg = rgb(024942)
-$color_gray = rgb(222222)
-$color_text_light = rgb(F0F0F0)
-$color_text_dark = rgb(1b110e)
-$color_white = rgb(FFFFFF)
 # Hyprland config - converted from i3 config by Adam French
 # https://wiki.hyprland.org/Configuring/
 

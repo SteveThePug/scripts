@@ -1,6 +1,15 @@
+set $color_primary #55ffbb
+set $color_secondary #62ff57
+set $color_tertiary #ff579a
+set $color_bg #1b110e
+set $color_bg_secondary #000000
+set $color_alt_bg #024942
+set $color_gray #222222
+set $color_text_light #F0F0F0
+set $color_text_dark #1b110e
+set $color_white #FFFFFF
 # This is my personal personal i3 config file! - Adam French
 
-include ~/scripts/i3/colors.conf
 
 # WORKSPACE NAMES -----------------------------------
 set $ws1 1:ツ
