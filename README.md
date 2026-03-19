@@ -26,11 +26,42 @@ Install all packages:
 yay -S $(grep -v '^\s*$' ~/scripts/packages.txt | tr '\n' ' ')
 ```
 
-## Linking Configs
+## Install / Uninstall
 
-Pick a window manager section below, then add the shared configs.
+`install.sh` symlinks configs, sources shell files, and backs up any existing files it would overwrite. `uninstall.sh` reverses the process, removing symlinks and restoring backups.
 
-### Hyprland
+```bash
+# Install everything (uses Hyprland as the WM)
+~/scripts/install.sh all
+
+# Install specific targets
+~/scripts/install.sh hyprland shell nvim tmux
+
+# Uninstall specific targets (restores from most recent backup)
+~/scripts/uninstall.sh nvim shell
+
+# Uninstall using a specific backup
+~/scripts/uninstall.sh --backup ~/scripts/backups/20260319_120000 all
+```
+
+Available targets: `hyprland`, `sway`, `i3`, `cursor`, `shell`, `alacritty`, `tmux`, `nvim`, `vim`, `all`.
+
+### tmux prerequisite
+
+Install the plugin manager before running `install.sh tmux`:
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+### Manual linking
+
+If you prefer to link configs manually instead of using `install.sh`:
+
+<details>
+<summary>Manual symlink commands</summary>
+
+#### Hyprland
 
 ```bash
 ln -sf ~/scripts/hypr ~/.config/hypr
@@ -38,7 +69,7 @@ ln -sf ~/scripts/waybar ~/.config/waybar
 ln -sf ~/scripts/wofi ~/.config/wofi
 ```
 
-### Sway
+#### Sway
 
 ```bash
 ln -sf ~/scripts/sway ~/.config/sway
@@ -53,7 +84,7 @@ mv ~/scripts/waybar/config ~/scripts/waybar/config.hypr.json
 mv ~/scripts/waybar/waybar_sway_config.json ~/scripts/waybar/config
 ```
 
-### i3
+#### i3
 
 ```bash
 ln -sf ~/scripts/i3 ~/.config/i3
@@ -61,13 +92,13 @@ ln -sf ~/scripts/i3blocks ~/.config/i3blocks
 ln -sf ~/scripts/i3status ~/.config/i3status
 ```
 
-### Cursor
+#### Cursor
 
 ```bash
 ln -sf ~/scripts/hatsune-miku-windows-linux-cursors/miku-cursor-linux ~/.local/share/icons/"Miku Cursor"
 ```
 
-### Shell
+#### Shell
 
 Add to `~/.bashrc` or `~/.zshrc`:
 
@@ -76,7 +107,7 @@ source ~/scripts/bashrc  # or zshrc
 export PATH="~/scripts/sh:$PATH"
 ```
 
-### Terminals
+#### Terminals
 
 **Alacritty** - add to `~/.config/alacritty/alacritty.toml`:
 
@@ -86,13 +117,7 @@ import = ["~/scripts/alacritty.toml"]
 
 **Kitty** - kitty.conf is used directly by the WM configs.
 
-### tmux
-
-Install the plugin manager first:
-
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
+#### tmux
 
 Add to `~/.tmux.conf`:
 
@@ -100,13 +125,15 @@ Add to `~/.tmux.conf`:
 source ~/scripts/tmux.conf
 ```
 
-### Vim
+#### Vim
 
 Add to `~/.vimrc`:
 
 ```
 source ~/scripts/vimrc
 ```
+
+</details>
 
 ## Keybindings
 
