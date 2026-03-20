@@ -100,11 +100,11 @@ install_cursor() {
 
 install_shell() {
   echo "Installing shell configs..."
-  if [ -f "$HOME/.zshrc" ] || [ "$SHELL" = *zsh* ]; then
+  if [ -f "$HOME/.zshrc" ] || [[ "$SHELL" == *zsh* ]]; then
     append_if_missing "$HOME/.zshrc" "source ~/scripts/zshrc"
     append_if_missing "$HOME/.zshrc" 'export PATH="$HOME/scripts/sh:$PATH"'
   fi
-  if [ -f "$HOME/.bashrc" ] || [ "$SHELL" = *bash* ]; then
+  if [ -f "$HOME/.bashrc" ] || [[ "$SHELL" == *bash* ]]; then
     append_if_missing "$HOME/.bashrc" "source ~/scripts/bashrc"
     append_if_missing "$HOME/.bashrc" 'export PATH="$HOME/scripts/sh:$PATH"'
   fi
