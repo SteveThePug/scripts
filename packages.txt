@@ -17,6 +17,9 @@ hyprpaper
 hypridle
 hyprlock
 
+dex
+polkit-gnome
+
 waybar
 wofi
 
@@ -71,6 +74,8 @@ yarn
 zed
 vim
 neovim
+
+activitywatch-bin
 
 ranger
 thunar
