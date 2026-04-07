@@ -21,7 +21,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id dunst
-exec --no-startup-id xautolock -time 30 -locker blurlock
+exec --no-startup-id xautolock -time 90 -locker blurlock
 # exec --no-startup-id nitrogen ~/scripts/background.jpg
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
