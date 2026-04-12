@@ -1,3 +1,7 @@
 */colors.css
 */colors.conf
 backups/
+i3/config
+sway/config
+waybar/style.css
+wofi/style.css

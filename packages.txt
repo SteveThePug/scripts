@@ -16,12 +16,15 @@ hyprland
 hyprpaper
 hypridle
 hyprlock
+hyprsunset
+hyprshutdown
+hyprpwcenter
+hyprlauncher
 
 dex
 polkit-gnome
 
 waybar
-wofi
 
 grim
 slurp
@@ -59,7 +62,11 @@ dunst
 cliphist
 inotify-tools
 
-pavucontrol
+fcitx5
+fcitx5-chinese-addons
+fcitx5-gtk
+fcitx5-qt
+fcitx5-configtool
 pipewire
 pipewire-alsa
 pipewire-audio

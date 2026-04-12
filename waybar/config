@@ -4,7 +4,7 @@
     "height": 30,
     "spacing": 0,
 
-    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-left": ["hyprland/workspaces", "hyprland/submap", "custom/steam", "custom/waterfox", "custom/discord", "custom/spotify", "custom/obsidian"],
     "modules-right": [
         "custom/greetings",
         "custom/history",
@@ -111,5 +111,35 @@
 
     "tray": {
         "spacing": 10
+    },
+
+    "custom/steam": {
+        "format": "Steam",
+        "on-click": "steam",
+        "tooltip-format": "Steam"
+    },
+
+    "custom/waterfox": {
+        "format": "Waterfox",
+        "on-click": "waterfox",
+        "tooltip-format": "Waterfox"
+    },
+
+    "custom/discord": {
+        "format": "Discord",
+        "on-click": "snap run discord",
+        "tooltip-format": "Discord"
+    },
+
+    "custom/spotify": {
+        "format": "Spotify",
+        "on-click": "snap run spotify",
+        "tooltip-format": "Spotify"
+    },
+
+    "custom/obsidian": {
+        "format": "Obsidian",
+        "on-click": "obsidian",
+        "tooltip-format": "Obsidian"
     }
 }

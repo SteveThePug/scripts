@@ -118,6 +118,21 @@ window#waybar {
     color: @color_tertiary;
 }
 
+/* App launcher buttons */
+#custom-steam,
+#custom-waterfox,
+#custom-discord,
+#custom-spotify,
+#custom-obsidian {
+    padding: 0 10px;
+    color: @color_primary;
+}
+
+#custom-steam {
+    margin-left: 8px;
+    border-left: 1px solid @color_tertiary;
+}
+
 #tray {
     padding: 0 8px;
     border-left: 1px solid @color_tertiary;
