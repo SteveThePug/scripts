@@ -1,23 +1,23 @@
 return {
-	{
-		"snacks.nvim",
-		keys = {
-			{
-				"<leader>?",
-				function()
-					Snacks.picker.keymaps()
-				end,
-				desc = "Search Keymaps",
-				mode = { "n", "x" },
-			},
-		},
-		opts = {
-			dashboard = {
-				preset = {
-					pick = function(cmd, opts)
-						return LazyVim.pick(cmd, opts)()
-					end,
-					header = [[
+  {
+    "snacks.nvim",
+    keys = {
+      {
+        "<leader>?",
+        function()
+          Snacks.picker.keymaps()
+        end,
+        desc = "Search Keymaps",
+        mode = { "n", "x" },
+      },
+    },
+    opts = {
+      dashboard = {
+        preset = {
+          pick = function(cmd, opts)
+            return LazyVim.pick(cmd, opts)()
+          end,
+          header = [[
           ███████╗████████╗██████╗ 
           ██╔════╝╚══██╔══╝██╔══██╗
           ███████╗   ██║   ██████╔╝
@@ -37,8 +37,8 @@ return {
             { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           },
-				},
-			},
-		},
-	},
+        },
+      },
+    },
+  },
 }

@@ -10,7 +10,7 @@
 -- When opening multiple files, tile them vertically (side by side)
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    if vim.fn.argc() == 2 then
+    if vim.fn.argc() > 1 then
       vim.cmd("vertical ball")
     end
   end,
