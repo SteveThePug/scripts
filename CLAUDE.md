@@ -16,6 +16,17 @@ This is a dotfiles/config repository for Arch Linux (Manjaro) using `yay` as the
 - **Submodule**: `hatsune-miku-windows-linux-cursors` - cursor theme (init with `git submodule update --init --recursive`)
 - **Packages**: `packages.txt` - list of packages installed via `yay -S`
 
+## Build System
+
+Some configs are built by concatenating a `colors.*` file with a `base.*` file. The build outputs are gitignored. **Always edit the source (`base.*`) files, never the built outputs.**
+
+| Component | Sources | Build output | Build command |
+|-----------|---------|--------------|---------------|
+| Hyprland | `hypr/colors.conf` + `hypr/base.conf` | `hypr/hyprland.conf` | `hypr/build.sh` |
+| Waybar CSS | `waybar/colors.css` + `waybar/base.css` | `waybar/style.css` | `waybar/build.sh` |
+
+After editing a base file, run the corresponding `build.sh` to regenerate the output.
+
 ## Key Conventions
 
 - Configs are symlinked into `~/.config/` (see README.md for exact symlink commands per component)

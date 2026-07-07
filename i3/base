@@ -92,6 +92,9 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
+# Toggle nerd-dictation
+bindsym $mod+c exec --no-startup-id "pgrep -f 'nerd-dictation begin' >/dev/null && nerd-dictation end || nerd-dictation begin"
+
 focus_follows_mouse yes
 
 # change focus

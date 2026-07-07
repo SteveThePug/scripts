@@ -32,6 +32,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id dunst
 exec --no-startup-id xautolock -time 90 -locker blurlock
+exec_always --no-startup-id xrandr --output DP-2 --rotate left
 # exec --no-startup-id nitrogen ~/scripts/background.jpg
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
@@ -101,6 +102,9 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
+# Toggle nerd-dictation
+bindsym $mod+c exec --no-startup-id "pgrep -x nerd-dictation && nerd-dictation end || nerd-dictation begin"
 
 focus_follows_mouse yes
 

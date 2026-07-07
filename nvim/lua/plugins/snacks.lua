@@ -1,6 +1,16 @@
 return {
 	{
 		"snacks.nvim",
+		keys = {
+			{
+				"<leader>?",
+				function()
+					Snacks.picker.keymaps()
+				end,
+				desc = "Search Keymaps",
+				mode = { "n", "x" },
+			},
+		},
 		opts = {
 			dashboard = {
 				preset = {
