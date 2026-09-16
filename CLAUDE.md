@@ -22,7 +22,7 @@ Some configs are built by concatenating a `colors.*` file with a `base.*` file. 
 
 | Component | Sources | Build output | Build command |
 |-----------|---------|--------------|---------------|
-| Hyprland | `hypr/colors.conf` + `hypr/base.conf` | `hypr/hyprland.conf` | `hypr/build.sh` |
+| Hyprland | `hypr/colors.lua` + `hypr/base.lua` | `hypr/hyprland.lua` | `hypr/build.sh` |
 | Waybar CSS | `waybar/colors.css` + `waybar/base.css` | `waybar/style.css` | `waybar/build.sh` |
 
 After editing a base file, run the corresponding `build.sh` to regenerate the output.

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
-cat colors.conf base.conf >hyprland.conf
+cat colors.lua base.lua >hyprland.lua

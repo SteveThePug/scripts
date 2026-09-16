@@ -6,7 +6,7 @@ Dotfiles and scripts for Arch Linux (Manjaro), targeting Wayland (Hyprland / Swa
 
 Inside `scripts/wofi/styles.css`, I have the colour css set to `/home/adamf/scripts/wofi/colors.css`, which is clearly ugly and not nice but it was quick to do.
 
-Wofi is called in hypr/hyprland.conf and sway/swayconfig with the command `wofi --style /home/adamf/scripts/wofi/styles.css`. This is also not ideal but I couldn't find a way to get it to work with a relative path. I'm unsure when hyprland working directory is.
+Wofi is called in hypr/hyprland.lua and sway/swayconfig with the command `wofi --style /home/adamf/scripts/wofi/styles.css`. This is also not ideal but I couldn't find a way to get it to work with a relative path. I'm unsure when hyprland working directory is.
 
 ## Setup
 
@@ -223,15 +223,15 @@ swaymsg reload          # Sway
 killall waybar && waybar &  # Waybar
 ```
 
-Generated files (committed so configs work after a fresh clone):
+Generated files (gitignored; `install.sh` runs `gen-colors` before building):
 
-| File                | Format                      | Used by                      |
-| ------------------- | --------------------------- | ---------------------------- |
-| `hypr/colors.conf`  | `$color_name = rgb(HEXVAL)` | `hyprland.conf` (source)     |
-| `sway/colors.conf`  | `set $color_name #HEXVAL`   | `swayconfig` (include)       |
-| `i3/colors.conf`    | `set $color_name #HEXVAL`   | `i3config` (include)         |
-| `waybar/colors.css` | CSS custom properties       | `waybar/style.css` (@import) |
-| `wofi/colors.css`   | CSS custom properties       | `wofi/style.css` (@import)   |
+| File                | Format                       | Used by                      |
+| ------------------- | ---------------------------- | ---------------------------- |
+| `hypr/colors.lua`   | `color_name = "rgb(HEXVAL)"` | `hyprland.lua` (built in)    |
+| `sway/colors.conf`  | `set $color_name #HEXVAL`    | `swayconfig` (include)       |
+| `i3/colors.conf`    | `set $color_name #HEXVAL`    | `i3config` (include)         |
+| `waybar/colors.css` | CSS custom properties        | `waybar/style.css` (@import) |
+| `wofi/colors.css`   | CSS custom properties        | `wofi/style.css` (@import)   |
 
 ## Scripts
 
