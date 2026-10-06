@@ -1,0 +1,8 @@
+#!/bin/bash
+# up: update repo, AUR and flatpak packages without prompts
+
+yay -Syu --noconfirm
+flatpak update -y
+
+# refresh the waybar update counter
+pkill -RTMIN+8 waybar

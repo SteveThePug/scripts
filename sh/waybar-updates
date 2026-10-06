@@ -1,0 +1,13 @@
+#!/bin/bash
+# waybar-updates: prints pending repo + AUR update count, nothing when up to date
+
+repo=$(checkupdates 2>/dev/null)
+aur=$(yay -Qua 2>/dev/null)
+
+list=$(printf '%s\n%s\n' "$repo" "$aur" | sed '/^$/d')
+[ -z "$list" ] && exit 0
+
+count=$(wc -l <<<"$list")
+tooltip=$(head -40 <<<"$list" | sed 's/&/\&amp;/g; s/</\&lt;/g' | sed ':a;N;$!ba;s/\n/\\n/g')
+
+printf '{"text": "UPD: %s", "tooltip": "%s"}\n' "$count" "$tooltip"
