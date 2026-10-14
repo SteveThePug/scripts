@@ -9,7 +9,6 @@ return {
           relative = "win",
           position = "bottom",
           height = 0.3,
-          split_width_percentage = 0.99,
         },
       },
       diff_opts = {
@@ -19,7 +18,6 @@ return {
       },
     },
     keys = {
-      { "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
       { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
       { "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
       { "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
