@@ -35,7 +35,7 @@ this file only covers what's different. Press `<space>` and wait for which-key, 
 
 ## Behaviour changes from LazyVim
 
-- 4-space indent by default; C/C++ uses 2 spaces and has format-on-save **off**
+- 4-space indent everywhere (clangd fallback style matches); C/C++ has format-on-save **off**
   (format manually with `<space>cf`)
 - `nvim a b c` opens the files side by side
 - Inactive windows are dimmed (vimade); markdown renders inline (markview)

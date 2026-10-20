@@ -12,8 +12,9 @@ return {
             "--completion-style=detailed",
             "--function-arg-placeholders",
             -- ColumnLimit: 0 = fix indentation only; keep existing line
-            -- breaks, never rewrap or join lines
-            "--fallback-style={BasedOnStyle: LLVM, ColumnLimit: 0}",
+            -- breaks, never rewrap or join lines. IndentWidth: 4 matches
+            -- the editor's shiftwidth
+            "--fallback-style={BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 0}",
           },
         },
       },
