@@ -17,11 +17,11 @@ this file only covers what's different. Press `<space>` and wait for which-key, 
 | `<space>?` | Search all keymaps |
 | `<C-/>` | Toggle terminal (project root, bottom of current window) |
 | **AI** — `<space>a` | |
-| `<space>ac` / `af` | Toggle / focus Claude Code |
-| `<space>ar` / `aC` | Resume / continue last Claude session |
-| `<space>ab` | Add current buffer to Claude context |
-| `<space>as` | Send selection (visual) or file (explorer) to Claude |
-| `<space>aa` / `ad` | Accept / deny Claude's proposed diff |
+| `<space>aa` / `ac` | Toggle CLI / toggle Claude ([sidekick](https://github.com/folke/sidekick.nvim)) |
+| `<space>as` / `ad` | Select CLI / detach session |
+| `<space>at` / `af` / `av` | Send this / file / visual selection |
+| `<space>ap` | Pick a prompt |
+| `<C-.>` | Focus the sidekick terminal (any mode) |
 | **Git** (Neogit) — `<space>g` | |
 | `<space>gg` | Neogit status |
 | `<space>gc` / `gl` / `gp` | Commit / log / push |
