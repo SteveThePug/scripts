@@ -161,6 +161,11 @@ uninstall_vim() {
   remove_line "$HOME/.vimrc" "source ~/scripts/vimrc"
 }
 
+uninstall_kde() {
+  echo "Uninstalling KDE (Hyprland-style) config..."
+  "$SCRIPTS_DIR/kde/apply.sh" --reset
+}
+
 if [ $# -eq 0 ]; then
   usage
   exit 1
@@ -205,6 +210,7 @@ for target in "${targets[@]}"; do
   tmux) uninstall_tmux ;;
   nvim) uninstall_nvim ;;
   vim) uninstall_vim ;;
+  kde) uninstall_kde ;;
   *)
     echo "Unknown target: $target"
     usage

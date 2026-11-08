@@ -14,3 +14,6 @@ wofi/style.css
 
 # Stub Hyprland writes on first run; the real config is hyprland.lua
 hypr/hyprland.conf
+
+# Python bytecode
+__pycache__/

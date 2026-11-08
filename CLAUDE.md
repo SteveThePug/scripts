@@ -9,6 +9,7 @@ This is a dotfiles/config repository for Arch Linux (Manjaro) using `yay` as the
 ## Repository Structure
 
 - **Window managers**: `hyprland/`, `sway/`, `i3/` - config files for each WM
+- **KDE Plasma (Steam Deck)**: `kde/` - `apply.sh` installs Krohnkite and runs `shortcuts.py`, which sets Hyprland-style global shortcuts live via kglobalaccel D-Bus (don't hand-edit `kglobalshortcutsrc`; edit the `BINDINGS` table). Avoid `KGlobalAccel.globalShortcutsByKey` over D-Bus because a malformed call crashes kwin_wayland
 - **Waybar**: `waybar/` - separate config JSONs per WM (`waybar_hyprland_config.json`, `waybar_sway_config.json`) plus shared `waybar_style.css`
 - **Shell**: `bashrc`, `zshrc` - sourced from the user's dotfiles, not used directly
 - **Terminal**: `alacritty.toml` (imported via alacritty's import system), `kitty.conf`

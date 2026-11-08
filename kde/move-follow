@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Move the active window to desktop N and switch there (hyprland: SUPER+SHIFT+N)
+n="$1"
+qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut "Window to Desktop $n"
+qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.invokeShortcut "Switch to Desktop $n"

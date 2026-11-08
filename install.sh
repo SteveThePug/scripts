@@ -18,6 +18,7 @@ usage() {
   echo "  tmux        Source tmux.conf"
   echo "  nvim        Neovim (LazyVim) config"
   echo "  vim         Source vimrc"
+  echo "  kde         KDE Plasma (Steam Deck): Krohnkite + Hyprland-style shortcuts"
   echo "  all         Everything (uses hyprland as WM)"
   echo
   echo "Options:"
@@ -133,6 +134,14 @@ install_vim() {
   append_if_missing "$HOME/.vimrc" "source ~/scripts/vimrc"
 }
 
+install_kde() {
+  echo "Installing KDE (Hyprland-style) config..."
+  backup "$CONFIG_DIR/kglobalshortcutsrc"
+  backup "$CONFIG_DIR/kwinrc"
+  backup "$CONFIG_DIR/kxkbrc"
+  "$SCRIPTS_DIR/kde/apply.sh"
+}
+
 if [ $# -eq 0 ]; then
   usage
   exit 1
@@ -163,6 +172,7 @@ for target in "${targets[@]}"; do
   tmux) install_tmux ;;
   nvim) install_nvim ;;
   vim) install_vim ;;
+  kde) install_kde ;;
   *)
     echo "Unknown target: $target"
     usage

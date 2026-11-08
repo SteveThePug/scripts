@@ -44,7 +44,9 @@ yay -S $(grep -v '^\s*$' ~/scripts/packages.txt | tr '\n' ' ')
 ~/scripts/uninstall.sh --backup ~/scripts/backups/20260319_120000 all
 ```
 
-Available targets: `hyprland`, `sway`, `i3`, `cursor`, `shell`, `alacritty`, `tmux`, `nvim`, `vim`, `all`.
+Available targets: `hyprland`, `sway`, `i3`, `cursor`, `shell`, `alacritty`, `tmux`, `nvim`, `vim`, `kde`, `all`.
+
+`kde` is for KDE Plasma 6 (Steam Deck desktop mode) and is not part of `all`. See [KDE Plasma (Steam Deck)](#kde-plasma-steam-deck).
 
 ### tmux prerequisite
 
@@ -179,6 +181,30 @@ All window managers and tmux use vim-style <kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><
 | `Shift + s`      | Power off    |
 | `e`              | Exit session |
 | `Return` / `Esc` | Cancel       |
+
+### KDE Plasma (Steam Deck)
+
+`install.sh kde` runs `kde/apply.sh`. It installs the [Krohnkite](https://github.com/anametologin/krohnkite) tiling script into `~/.local/share/kwin/scripts`, so it survives SteamOS updates, creates 8 virtual desktops, and sets the shortcuts live through kglobalaccel's D-Bus API (`kde/shortcuts.py`). KWin owns `kglobalshortcutsrc` while it's running, so editing that file by hand doesn't stick. To change a binding, edit the `BINDINGS` table in `kde/shortcuts.py` and press `$mod + Shift + c`. `uninstall.sh kde` (or `kde/apply.sh --reset`) puts every touched shortcut back to its KDE default.
+
+Bindings match the shared table above, with these differences:
+
+| Key                          | KDE behaviour                                                |
+| ---------------------------- | ------------------------------------------------------------ |
+| `$mod + Return` / `d`        | Konsole / KRunner                                            |
+| `$mod + F2` / `F3`           | Firefox (flatpak) / Dolphin                                  |
+| `$mod + t`                   | Cycle Krohnkite layout: spiral (dwindle) → tile (master) → monocle |
+| `$mod + w`                   | Monocle layout (instead of a tab group)                     |
+| `$mod + e` / `v`             | Rotate layout / rotate the focused part                      |
+| `$mod + r`                   | Interactive resize; `$mod + Ctrl + h/j/k/l` resizes tiles    |
+| `$mod + Space`               | Switch to the last window                                    |
+| `$mod + Shift + s`           | Keep window on all desktops                                  |
+| `$mod + Shift + -`           | Minimize (no scratchpad in KDE)                              |
+| `$mod + 0` / `Shift + e`     | Plasma logout/shutdown screen                                |
+| `$mod + Ctrl + x`            | Kill window (xkill)                                          |
+| `$mod + Shift + w`           | KDE Overview                                                 |
+| `Print` / `$mod + Print` / `$mod + Shift + Print` | Spectacle region → GUI / clipboard / `~/screenshot.png` |
+
+Not mapped: `$mod + b` (KWin has no "last desktop" action), `$mod + m` (bar toggle), `$mod + g`, `$mod + c`, `$mod + F5`.
 
 ### tmux
 
