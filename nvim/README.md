@@ -6,7 +6,7 @@ this file only covers what's different. Press `<space>` and wait for which-key, 
 
 ## Setup
 
-- Colorscheme: oxocarbon
+- Colorscheme: tokyonight (LazyVim default)
 - Language extras: C/C++ (clangd), Python, Go, TypeScript/Vue/Tailwind, SQL, Docker, Clojure
 - Requires `tree-sitter-cli` (parsers can't be built without it) — see `../packages.txt`
 
