@@ -1,0 +1,12 @@
+[Unit]
+Description=Start the "dev" distrobox container at login
+After=default.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/podman start dev
+ExecStop=/usr/bin/podman stop -t 10 dev
+
+[Install]
+WantedBy=default.target

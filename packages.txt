@@ -96,4 +96,24 @@ wine
 mono
 
 avahi
+
 tree-sitter-cli
+base-devel
+glibc
+linux-api-headers
+git
+curl
+tar
+
+ttf-inconsolata
+ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-mono
+
+go
+gopls
+delve
+golangci-lint
+gofumpt
+staticcheck
+revive
+go-tools
