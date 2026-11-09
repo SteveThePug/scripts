@@ -57,6 +57,8 @@ kw MouseBindings CommandAllKey Meta
 # caps:swapescape, as in hyprland input.kb_options
 kwriteconfig6 --file kxkbrc --group Layout --key ResetOldOptions true
 kwriteconfig6 --file kxkbrc --group Layout --key Options caps:swapescape
+# tell KWin to re-read kxkbrc now (same signal the Keyboard KCM sends on Apply)
+dbus-send --session --type=signal /Layouts org.kde.keyboard.reloadConfig 2>/dev/null || true
 
 kwin_reconfigure
 
