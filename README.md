@@ -170,6 +170,15 @@ All window managers and tmux use vim-style <kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><
 | `$mod + F5`              | Music (mocp)                               |
 | `Print`                  | Screenshot                                 |
 
+### Hyprland only
+
+| Key                | Action                                                               |
+| ------------------ | -------------------------------------------------------------------- |
+| `$mod + p`         | Focused window follows the cursor; press again to pause / resume     |
+| `$mod + Shift + p` | Stop following                                                       |
+
+Picture-in-Picture windows follow the cursor automatically (`hypr/cursor_follow.lua`).
+
 ### System menu (`$mod + 0`)
 
 | Key              | Action       |

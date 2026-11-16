@@ -316,11 +316,8 @@ hl.window_rule({
 	float = true,
 })
 
-hl.window_rule({
-	name = "PiP",
-	match = { title = "^(Picture-in-Picture)$" },
-	float = false,
-})
+-- Picture-in-Picture windows float and follow the cursor (SUPER+P / SUPER+SHIFT+P), see cursor_follow.lua
+require("cursor_follow")
 
 -------------------------------
 ---- WORKSPACE NAMES / ICONS --
